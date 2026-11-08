@@ -57,16 +57,16 @@ ul, ol {
 
 :root {
   /*  LIGHT MODE COLOURS */
-  -color-bg: #F8F1E5;
-  -color-surface: #FFFFFF;
-  -color-header-bg: #FFFFFF;
-  -color-footer-bg: #111111;
-  -color-footer-text: #F8F1E5;
-  -color-text: #111111;
-  -color-text-secondary: rgba(17, 17, 17, 0.7);
+  --color-bg: #F8F1E5;
+  --color-surface: #FFFFFF;
+  --color-header-bg: #FFFFFF;
+  --color-footer-bg: #111111;
+  --color-footer-text: #F8F1E5;
+  --color-text: #111111;
+  --color-text-secondary: rgba(17, 17, 17, 0.7);
   --color-border: #D9D9D9;
-  -color-primary: #E63A3A;
-  -color-primary-hover: #B4232C;
+  --color-primary: #E63A3A;
+  --color-primary-hover: #B4232C;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.12);

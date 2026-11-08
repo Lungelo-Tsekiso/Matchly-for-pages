@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATCHLY | Competitions</title>
+  <meta name="description" content="Browse MATCHLY tournaments and leagues, view the knockout bracket, and see how teams advance." />
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js"></script>
+</head>
+
+<body>
+
+ <header class="site-header">
+    <div class="logo">
+      <a href="homepage.html">
+        <img class="logo-mark" src="../Images/matchly.logo.png" alt="Matchly Logo" width="120" height="40" /> <p class="tagline">Compete. Connect. Win.</p>
+      </a>
+    </div>
+
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      &#9776;
+    </button>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">&#127769;</button>
+    
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutUs.html">About</a></li>
+        <li><a href="competitions.html" aria-current="page">Competions</a></li>
+        <li><a href="teams.html">Teams</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="standings.html">Standings</a></li>
+        <li><a href="liveScores.html">Live Scores</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero">
+      <h1>Competitions</h1>
+      <p>Matchly hosts two kinds of competitions &mdash; ongoing Leagues and knockout Tournaments &mdash; across basketball, soccer, netball, volleyball, rugby and athletics.</p>
+    </section>
+
+    <section class="competition-tabs" aria-label="Competition type selector">
+      <div class="tab-buttons" role="tablist">
+        <button class="tab-btn" type="button" role="tab" id="tab-tournaments" aria-selected="true" aria-controls="panel-tournaments">Tournaments</button>
+        <button class="tab-btn" type="button" role="tab" id="tab-leagues" aria-selected="false" aria-controls="panel-leagues">Leagues</button>
+      </div>
+
+      <!-- TOURNAMENTS PANEL -->
+      <div id="panel-tournaments" class="tab-panel" role="tabpanel" aria-labelledby="tab-tournaments">
+
+        <h2>Current Tournaments</h2>
+        <ul class="card-grid">
+          <li class="competition-card">
+            <img src="../Images/basketball.pic5.jpg" width="150" height="150" style="object-fit:cover;" alt="Basketball players in action during a competitive match" />
+            <p class="sport-tag">Basketball</p>
+            <h3>Matchly Knockout Cup</h3>
+            <p>12 &ndash; 20 Sep 2026 &middot; 8 teams</p>
+            <a class="btn btn-secondary" href="#knockout-bracket">View Bracket</a>
+          </li>
+          <li class="competition-card">
+            <img src="../Images/basketball.pic6.jpg" width="150" height="150" style="object-fit:cover;" alt="A youth basketball team posing together indoors" />
+            <p class="sport-tag">Basketball</p>
+            <h3>Community Youth Classic</h3>
+            <p>3 &ndash; 4 Oct 2026 &middot; 6 teams</p>
+            <a class="btn btn-secondary" href="teams.html">View Teams</a>
+          </li>
+          <li class="competition-card">
+            <img src="https://images.pexels.com/photos/31862548/pexels-photo-31862548.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Players in action during a lively outdoor basketball match" />
+            <p class="sport-tag">Basketball</p>
+            <h3>Weekend Showdown</h3>
+            <p>17 &ndash; 18 Oct 2026 &middot; 8 teams</p>
+          <li class="competition-card">
+            <img src="https://images.pexels.com/photos/31013869/pexels-photo-31013869.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Two netball players in action on an outdoor court" />
+            <p class="sport-tag">Netball</p>
+            <h3>Netball Championship</h3>
+            <p>26 &ndash; 27 Sep 2026 &middot; 4 clubs</p>
+            <a class="btn btn-secondary" href="teams.html">View Teams</a>
+          </li>
+          <li class="competition-card">
+            <img src="https://images.pexels.com/photos/5470373/pexels-photo-5470373.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Soccer players in action during a match at an outdoor stadium" />
+            <p class="sport-tag">Soccer</p>
+            <h3>Soccer Community Cup</h3>
+            <p>10 &ndash; 11 Oct 2026 &middot; 4 clubs</p>
+            <a class="btn btn-secondary" href="fixtures.html">View Fixtures</a>
+          </li>
+          <li class="competition-card">
+            <img src="https://images.pexels.com/photos/8592966/pexels-photo-8592966.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Rugby players tackling fiercely during a match" />
+            <p class="sport-tag">Rugby</p>
+            <h3>Rugby Sevens Festival</h3>
+            <p>24 Oct 2026 &middot; 4 clubs</p>
+            <a class="btn btn-secondary" href="teams.html">View Teams</a>
+          </li>
+        </ul>
+
+        <section id="knockout-bracket" class="bracket" aria-labelledby="bracket-heading">
+          <h2 id="bracket-heading">Knockout Cup Bracket (Basketball)</h2>
+          <p>Teams advance to the next round by winning their match. The Final is still to be played. The Netball Championship, Soccer Community Cup and Rugby Sevens Festival above follow this same knockout format.</p>
+
+          <div class="bracket-round">
+            <h3>Quarter-Finals</h3>
+            <ul class="bracket-list">
+              <li><span class="winner">Eagles 62</span> vs Sharks 54</li>
+              <li><span class="winner">Panthers 58</span> vs Falcons 49</li>
+              <li><span class="winner">Tigers 71</span> vs Warriors 66</li>
+              <li><span class="winner">Bulls 60</span> vs Hawks 55</li>
+            </ul>
+          </div>
+
+          <div class="bracket-round">
+            <h3>Semi-Finals</h3>
+            <ul class="bracket-list">
+              <li><span class="winner">Eagles 65</span> vs Panthers 60</li>
+              <li><span class="winner">Tigers 70</span> vs Bulls 68</li>
+            </ul>
+          </div>
+
+          <div class="bracket-round">
+            <h3>Final</h3>
+            <ul class="bracket-list">
+              <li>Eagles vs Tigers &mdash; <em>Sat, 20 Sep 2026, 17:00 (upcoming)</em></li>
+            </ul>
+          </div>
+
+          <p class="bracket-note">Note: Bulls and Hawks are guest teams invited for this tournament only. See the <a href="teams.html">Teams page</a> for our regular season teams.</p>
+        </section>
+      </div>
+
+      <!-- LEAGUES PANEL  -->
+      <div id="panel-leagues" class="tab-panel" role="tabpanel" aria-labelledby="tab-leagues" hidden>
+
+        <h2>Current Leagues</h2>
+        <p>The Matchly Community League runs from August to November 2026, with basketball, soccer, netball, volleyball and rugby teams each playing a season of fixtures. Athletics runs as a series of open meets instead of a league.</p>
+
+        <h3>Basketball League Standings (Sample)</h3>
+        <table class="data-table">
+          <caption class="sr-only">Preview of the current Community League standings</caption>
+          <thead>
+            <tr>
+              <th scope="col">Pos</th>
+              <th scope="col">Team</th>
+              <th scope="col">P</th>
+              <th scope="col">W</th>
+              <th scope="col">L</th>
+              <th scope="col">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Eagles</td><td>4</td><td>3</td><td>1</td><td>6</td></tr>
+            <tr><td>2</td><td>Sharks</td><td>3</td><td>2</td><td>1</td><td>4</td></tr>
+            <tr><td>3</td><td>Panthers</td><td>4</td><td>2</td><td>2</td><td>4</td></tr>
+            <tr><td>4</td><td>Warriors</td><td>4</td><td>2</td><td>2</td><td>4</td></tr>
+          </tbody>
+        </table>
+        <a class="btn btn-secondary" href="standings.html">View Full Standings</a>
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="site-footer">
+    <div class="footer-about">
+      <h2>Matchly</h2>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-social">
+      <h3>Follow Matchly</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Matchly on Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Matchly on Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Matchly on X (Twitter)">X (Twitter)</a></li>
+      </ul>
+    </div>
+
+    <p class="copyright">&copy; 2026 Matchly Sports Community. Student project &mdash; fictional organisation, not real.</p>
+  </footer>
+</body>
+</html>

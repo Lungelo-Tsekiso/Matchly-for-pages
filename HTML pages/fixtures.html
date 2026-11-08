@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATCHLY | Fixtures</title>
+  <meta name="description" content="Upcoming MATCHLY fixtures across the Community League and Knockout Cup." />
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js"></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+   <header class="site-header">
+    <div class="logo">
+      <a href="homepage.html">
+        <img class="logo-mark" src="../Images/matchly.logo.png" alt="Matchly Logo" width="120" height="40" /> <p class="tagline">Compete. Connect. Win.</p>
+      </a>
+    </div>
+
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      &#9776;
+    </button>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">&#127769;</button>
+
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutUs.html">About</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="teams.html">Teams</a></li>
+        <li><a href="fixtures.html" aria-current="page">Fixtures</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="standings.html">Standings</a></li>
+        <li><a href="liveScores.html">Live Scores</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero">
+      <h1>Fixtures</h1>
+      <p>Upcoming matches across all Matchly leagues and tournaments, spanning basketball, soccer, netball, volleyball and rugby &mdash; plus athletics meets below.</p>
+    </section>
+
+    <section class="fixture-filters" aria-labelledby="filters-heading">
+      <h2 id="filters-heading" class="sr-only">Filter Fixtures</h2>
+      <form id="fixtures-filter-form">
+        <div class="filter-field">
+          <label for="filter-sport">Sport</label>
+          <select id="filter-sport" name="filter-sport">
+            <option value="all">All Sports</option>
+            <option value="basketball">Basketball</option>
+            <option value="soccer">Soccer</option>
+            <option value="netball">Netball</option>
+            <option value="volleyball">Volleyball</option>
+            <option value="rugby">Rugby</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-competition">Competition</label>
+          <select id="filter-competition" name="filter-competition">
+            <option value="all">All Competitions</option>
+            <option value="community-league">Community League</option>
+            <option value="knockout-cup">Knockout Cup</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-team">Team</label>
+          <select id="filter-team" name="filter-team">
+            <option value="all">All Teams</option>
+            <option value="eagles">Eagles</option>
+            <option value="panthers">Panthers</option>
+            <option value="tigers">Tigers</option>
+            <option value="falcons">Falcons</option>
+            <option value="warriors">Warriors</option>
+            <option value="sharks">Sharks</option>
+            <option value="comets-fc">Comets FC</option>
+            <option value="strikers-united">Strikers United</option>
+            <option value="diamonds">Diamonds Netball Club</option>
+            <option value="blazers">Blazers Netball Club</option>
+            <option value="wave">Wave Volleyball Club</option>
+            <option value="spikers">Spikers Volleyball Club</option>
+            <option value="rhinos">Rhinos Rugby Club</option>
+            <option value="lions-rfc">Lions Community RFC</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <section class="fixture-table-section" aria-labelledby="fixtures-heading">
+      <h2 id="fixtures-heading" class="sr-only">Upcoming Fixtures</h2>
+      <table class="data-table" id="fixtures-table">
+        <caption>Upcoming Fixtures</caption>
+        <thead>
+          <tr>
+            <th scope="col">Sport</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Home</th>
+            <th scope="col"></th>
+            <th scope="col">Away</th>
+            <th scope="col">Venue</th>
+            <th scope="col">Competition</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="eagles panthers">
+            <td>Basketball</td><td>06 Sep 2026</td><td>15:00</td><td>Eagles</td><td>vs</td><td>Panthers</td>
+            <td>Riverside Community Hall</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="tigers falcons">
+            <td>Basketball</td><td>06 Sep 2026</td><td>17:00</td><td>Tigers</td><td>vs</td><td>Falcons</td>
+            <td>Eastgate Recreation Centre</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="warriors sharks">
+            <td>Basketball</td><td>07 Sep 2026</td><td>14:00</td><td>Warriors</td><td>vs</td><td>Sharks</td>
+            <td>Westview Sports Complex</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="knockout-cup" data-teams="eagles sharks">
+            <td>Basketball</td><td>12 Sep 2026</td><td>15:00</td><td>Eagles</td><td>vs</td><td>Sharks</td>
+            <td>Riverside Community Hall</td><td>Knockout Cup &ndash; Quarter-Final</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="knockout-cup" data-teams="panthers falcons">
+            <td>Basketball</td><td>13 Sep 2026</td><td>16:00</td><td>Panthers</td><td>vs</td><td>Falcons</td>
+            <td>Northside Sports Centre</td><td>Knockout Cup &ndash; Quarter-Final</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="eagles falcons">
+            <td>Basketball</td><td>20 Sep 2026</td><td>15:00</td><td>Eagles</td><td>vs</td><td>Falcons</td>
+            <td>Riverside Community Hall</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="panthers tigers">
+            <td>Basketball</td><td>20 Sep 2026</td><td>17:00</td><td>Panthers</td><td>vs</td><td>Tigers</td>
+            <td>Northside Sports Centre</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="basketball" data-competition="community-league" data-teams="sharks warriors">
+            <td>Basketball</td><td>21 Sep 2026</td><td>14:00</td><td>Sharks</td><td>vs</td><td>Warriors</td>
+            <td>Riverside Community Hall</td><td>Community League</td><td>Postponed</td>
+          </tr>
+          <tr data-sport="soccer" data-competition="community-league" data-teams="comets-fc strikers-united">
+            <td>Soccer</td><td>08 Sep 2026</td><td>16:00</td><td>Comets FC</td><td>vs</td><td>Strikers United</td>
+            <td>Eastgate Recreation Centre</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="netball" data-competition="community-league" data-teams="diamonds blazers">
+            <td>Netball</td><td>08 Sep 2026</td><td>10:00</td><td>Diamonds Netball Club</td><td>vs</td><td>Blazers Netball Club</td>
+            <td>Southside Youth Hall</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="volleyball" data-competition="community-league" data-teams="wave spikers">
+            <td>Volleyball</td><td>09 Sep 2026</td><td>18:00</td><td>Wave Volleyball Club</td><td>vs</td><td>Spikers Volleyball Club</td>
+            <td>Northside Sports Centre</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="rugby" data-competition="community-league" data-teams="rhinos lions-rfc">
+            <td>Rugby</td><td>12 Sep 2026</td><td>15:00</td><td>Rhinos Rugby Club</td><td>vs</td><td>Lions Community RFC</td>
+            <td>Westview Sports Complex</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="no-fixtures-message" class="no-results" hidden>No fixtures match your filters.</p>
+    </section>
+
+    <section class="athletics-fixtures" aria-labelledby="athletics-fixtures-heading">
+      <h2 id="athletics-fixtures-heading">Upcoming Athletics Meets</h2>
+      <p>Athletics is an individual sport, so meets are listed separately from team fixtures.</p>
+      <ul>
+        <li><strong>14 Sep 2026, 08:00</strong> &mdash; Matchly Community Athletics Meet &mdash; Riverside Athletics Track</li>
+        <li><strong>28 Sep 2026, 08:00</strong> &mdash; Track Stars Open Meet &mdash; Riverside Athletics Track</li>
+      </ul>
+    </section>
+
+  </main>
+
+
+    <footer class="site-footer">
+    <div class="footer-about">
+      <h2>Matchly</h2>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-social">
+      <h3>Follow Matchly</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Matchly on Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Matchly on Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Matchly on X (Twitter)">X (Twitter)</a></li>
+      </ul>
+    </div>
+
+    <p class="copyright">&copy; 2026 Matchly Sports Community. Student project &mdash; fictional organisation, not real.</p>
+  </footer>
+
+</body>
+</html>

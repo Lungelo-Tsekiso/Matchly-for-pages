@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATCHLY | Teams</title>
+  <meta name="description" content="Meet the teams competing in MATCHLY leagues and tournaments." />
+
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+   <header class="site-header">
+    <div class="logo">
+      <a href="homepage.html">
+        <img class="logo-mark" src="../Images/matchly.logo.png" alt="Matchly Logo" width="120" height="40" /> <p class="tagline">Compete. Connect. Win.</p>
+      </a>
+    </div>
+
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      &#9776;
+    </button>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">&#127769;</button>
+
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutUs.html">About</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="teams.html" aria-current="page">Teams</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="standings.html">Standings</a></li>
+        <li><a href="liveScores.html">Live Scores</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero">
+      <h1>Teams</h1>
+      <p>Meet the teams and clubs competing in Matchly's basketball, soccer, netball, volleyball, rugby and athletics competitions this season.</p>
+    </section>
+
+    <section class="team-search">
+      <form role="search" aria-label="Search and filter teams" id="team-search-form">
+        <label for="team-search-input">Search teams</label>
+        <input type="search" id="team-search-input" name="team-search" placeholder="e.g. Eagles" />
+
+        <label for="filter-team-sport">Sport</label>
+        <select id="filter-team-sport" name="filter-team-sport">
+          <option value="all">All Sports</option>
+          <option value="basketball">Basketball</option>
+          <option value="soccer">Soccer</option>
+          <option value="netball">Netball</option>
+          <option value="volleyball">Volleyball</option>
+          <option value="rugby">Rugby</option>
+          <option value="athletics">Athletics</option>
+        </select>
+
+        <button type="submit" class="btn btn-secondary">Search</button>
+      </form>
+    </section>
+
+    <section class="team-list" aria-labelledby="team-list-heading">
+      <h2 id="team-list-heading" class="sr-only">All Teams</h2>
+      <ul class="card-grid" id="teams-grid">
+
+        <li class="team-card" data-team-name="Eagles" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/34515977/pexels-photo-34515977.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="A basketball team huddled together during an outdoor match" />
+          <h3>Eagles</h3>
+          <p><strong>Home Venue:</strong> Riverside Community Hall</p>
+          <p><strong>Coach:</strong> T. Mokoena</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Panthers" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/6767323/pexels-photo-6767323.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="A basketball team posing together on an indoor court" />
+          <h3>Panthers</h3>
+          <p><strong>Home Venue:</strong> Northside Sports Centre</p>
+          <p><strong>Coach:</strong> L. van Wyk</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Tigers" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/30722056/pexels-photo-30722056.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Players in action during an outdoor basketball game" />
+          <h3>Tigers</h3>
+          <p><strong>Home Venue:</strong> Eastgate Recreation Centre</p>
+          <p><strong>Coach:</strong> S. Dlamini</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Falcons" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/34515996/pexels-photo-34515996.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="A women's basketball team huddled together outdoors" />
+          <h3>Falcons</h3>
+          <p><strong>Home Venue:</strong> Southside Youth Hall</p>
+          <p><strong>Coach:</strong> M. Naidoo</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Warriors" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/11831859/pexels-photo-11831859.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Basketball players talking together during a break in a sports hall" />
+          <h3>Warriors</h3>
+          <p><strong>Home Venue:</strong> Westview Sports Complex</p>
+          <p><strong>Coach:</strong> K. Sithole</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Sharks" data-sport="basketball">
+          <img src="https://images.pexels.com/photos/30049751/pexels-photo-30049751.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Players reaching for the ball during a competitive basketball game" />
+          <h3>Sharks</h3>
+          <p><strong>Home Venue:</strong> Riverside Community Hall</p>
+          <p><strong>Coach:</strong> R. Abrahams</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Basketball</p>
+        </li>
+
+
+        <li class="team-card" data-team-name="Comets FC" data-sport="soccer">
+          <img src="../Images/soccer.pic3.jpg" width="150" height="150" style="object-fit:cover;" alt="Soccer players in action during a match at an outdoor stadium" />
+          <h3>Comets FC</h3>
+          <p><strong>Home Venue:</strong> Eastgate Recreation Centre</p>
+          <p><strong>Coach:</strong> J. Petersen</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Soccer</p>
+        </li>
+
+        <li class="team-card" data-team-name="Strikers United" data-sport="soccer">
+          <img src="https://images.pexels.com/photos/5470373/pexels-photo-5470373.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Soccer players in action during a match at an outdoor stadium" />
+          <p><strong>Home Venue:</strong> Westview Sports Complex</p>
+          <p><strong>Coach:</strong> A. Khumalo</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Soccer</p>
+        </li>
+
+        <li class="team-card" data-team-name="Diamonds Netball Club" data-sport="netball">
+          <img src="../Images/netballpic3.jpg" width="150" height="150" style="object-fit:cover;" alt="Two netball players in action on an outdoor court" />
+          <h3>Diamonds Netball Club</h3>
+          <p><strong>Home Venue:</strong> Southside Youth Hall</p>
+          <p><strong>Coach:</strong> N. Zulu</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Netball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Blazers Netball Club" data-sport="netball">
+          <img src="https://images.pexels.com/photos/31013869/pexels-photo-31013869.jpeg?auto=compress&cs=tinysrgb&w=1200"width="150" height="150" style="object-fit:cover;" alt="Two netball players in action on an outdoor court" />
+          <h3>Blazers Netball Club</h3>
+          <p><strong>Home Venue:</strong> Riverside Community Hall</p>
+          <p><strong>Coach:</strong> P. Botha</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Netball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Wave Volleyball Club" data-sport="volleyball">
+          <img src="../Images/volleyball.pic4.jpg" width="150" height="150" style="object-fit:cover;" alt="A group of young women playing volleyball on an outdoor court" />
+          <p><strong>Home Venue:</strong> Northside Sports Centre</p>
+          <p><strong>Coach:</strong> D. Pillay</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Volleyball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Spikers Volleyball Club" data-sport="volleyball">
+          <img src="../Images/volleyball.pic2.jpg" width="150" height="150" style="object-fit:cover;" alt="A group of young women playing volleyball on an outdoor court" />
+          <h3>Spikers Volleyball Club</h3>
+          <p><strong>Home Venue:</strong> Eastgate Recreation Centre</p>
+          <p><strong>Coach:</strong> C. Adams</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Volleyball</p>
+        </li>
+
+        <li class="team-card" data-team-name="Rhinos Rugby Club" data-sport="rugby">
+          <img src="../Images/rugbypic2.jpg" width="150" height="150" style="object-fit:cover;" alt="Rugby players tackling fiercely during a match" />
+          <h3>Rhinos Rugby Club</h3>
+          <p><strong>Home Venue:</strong> Westview Sports Complex</p>
+          <p><strong>Coach:</strong> F. van der Merwe</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Rugby</p>
+        </li>
+
+        <li class="team-card" data-team-name="Lions Community RFC" data-sport="rugby">
+          <img src="https://images.pexels.com/photos/8592966/pexels-photo-8592966.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Rugby players tackling fiercely during a match" />
+          <h3>Lions Community RFC</h3>
+          <p><strong>Home Venue:</strong> Southside Youth Hall</p>
+          <p><strong>Coach:</strong> T. Ndlovu</p>
+          <p><strong>Division:</strong> Community League</p>
+          <p><strong>Sport:</strong> Rugby</p>
+        </li>
+
+        <li class="team-card" data-team-name="Track Stars Athletics Club" data-sport="athletics">
+          <img src="https://images.pexels.com/photos/4604846/pexels-photo-4604846.jpeg?auto=compress&cs=tinysrgb&w=1200" width="150" height="150" style="object-fit:cover;" alt="Athletes running on a track in a stadium" />
+          <p><strong>Home Venue:</strong> Riverside Athletics Track</p>
+          <p><strong>Coach:</strong> M. Fortune</p>
+          <p><strong>Division:</strong> Individual Events</p>
+          <p><strong>Sport:</strong> Athletics</p>
+        </li>
+      </ul>
+      <p id="no-results-message" class="no-results" hidden>No teams match your search.</p>
+    </section>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-about">
+      <h2>Matchly</h2>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-social">
+      <h3>Follow Matchly</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Matchly on Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Matchly on Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Matchly on X (Twitter)">X (Twitter)</a></li>
+      </ul>
+    </div>
+
+    <p class="copyright">&copy; 2026 Matchly Sports Community. Student project &mdash; fictional organisation, not real.</p>
+  </footer>
+
+  
+</body>
+</html>

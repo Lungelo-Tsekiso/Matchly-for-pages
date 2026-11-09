@@ -57,6 +57,10 @@
       <h2 id="filters-heading" class="sr-only">Filter Fixtures</h2>
       <form id="fixtures-filter-form">
         <div class="filter-field">
+          <label for="fixture-search">Search fixtures</label>
+          <input id="fixture-search" name="fixture-search" type="search" placeholder="Team, venue or competition" />
+        </div>
+        <div class="filter-field">
           <label for="filter-sport">Sport</label>
           <select id="filter-sport" name="filter-sport">
             <option value="all">All Sports</option>
@@ -65,6 +69,7 @@
             <option value="netball">Netball</option>
             <option value="volleyball">Volleyball</option>
             <option value="rugby">Rugby</option>
+            <option value="athletics">Athletics</option>
           </select>
         </div>
         <div class="filter-field">
@@ -93,8 +98,10 @@
             <option value="spikers">Spikers Volleyball Club</option>
             <option value="rhinos">Rhinos Rugby Club</option>
             <option value="lions-rfc">Lions Community RFC</option>
+            <option value="track-stars">Track Stars Athletics Club</option>
           </select>
         </div>
+        <button class="btn btn-secondary" type="reset">Reset filters</button>
       </form>
     </section>
 
@@ -164,19 +171,19 @@
             <td>Rugby</td><td>12 Sep 2026</td><td>15:00</td><td>Rhinos Rugby Club</td><td>vs</td><td>Lions Community RFC</td>
             <td>Westview Sports Complex</td><td>Community League</td><td>Scheduled</td>
           </tr>
+          <tr data-sport="athletics" data-competition="community-league" data-teams="track-stars">
+            <td>Athletics</td><td>14 Sep 2026</td><td>08:00</td><td>Track Stars Athletics Club</td><td>&mdash;</td><td>Community athletes</td>
+            <td>Riverside Athletics Track</td><td>Community League</td><td>Scheduled</td>
+          </tr>
+          <tr data-sport="athletics" data-competition="community-league" data-teams="track-stars">
+            <td>Athletics</td><td>28 Sep 2026</td><td>08:00</td><td>Track Stars Athletics Club</td><td>&mdash;</td><td>Open meet athletes</td>
+            <td>Riverside Athletics Track</td><td>Community League</td><td>Scheduled</td>
+          </tr>
         </tbody>
       </table>
-      <p id="no-fixtures-message" class="no-results" hidden>No fixtures match your filters.</p>
     </section>
 
-    <section class="athletics-fixtures" aria-labelledby="athletics-fixtures-heading">
-      <h2 id="athletics-fixtures-heading">Upcoming Athletics Meets</h2>
-      <p>Athletics is an individual sport, so meets are listed separately from team fixtures.</p>
-      <ul>
-        <li><strong>14 Sep 2026, 08:00</strong> &mdash; Matchly Community Athletics Meet &mdash; Riverside Athletics Track</li>
-        <li><strong>28 Sep 2026, 08:00</strong> &mdash; Track Stars Open Meet &mdash; Riverside Athletics Track</li>
-      </ul>
-    </section>
+    <p id="no-fixtures-message" class="no-results" aria-live="polite" hidden>No fixtures match your search and filters.</p>
 
   </main>
 

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MATCHLY | Competitions</title>
-  <meta name="description" content="Browse MATCHLY tournaments and leagues, view the knockout bracket, and see how teams advance." />
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/script.js"></script>
+    <title>Contact Matchly | Contact Form and Venue Map</title>
+    <meta name="description" content="Contact the Matchly student project using a locally prepared email draft and view an illustrative example venue map." />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
 </head>
 
 <body>
@@ -54,36 +54,51 @@
     </section>
 
     <section class="contact-details" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Ways to Get in Touch</h2>
+      <h2 id="contact-heading">Contact Matchly </h2>
+      <p>Use the form to prepare an email draft.</p>
 
-      <figure class="contact-image">
-        <p>Exterior of the Riverside Community Hall, a Matchly venue</p>
-      </figure>
+      <section class="venue-map-section" aria-labelledby="venue-map-heading">
+        <h3 id="venue-map-heading">Johannesburg map</h3>
+        <iframe
+          id="venue-map"
+          class="venue-map"
+          title="Google Map centered on Johannesburg, South Africa"
+          src="https://maps.google.com/maps?q=Johannesburg%2C%20South%20Africa&z=12&output=embed"
+          loading="eager"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+        <p class="map-attribution">Map provided by Google Maps. <a href="https://www.google.com/maps/search/?api=1&amp;query=Johannesburg%2C%20South%20Africa" target="_blank" rel="noopener noreferrer">Open the map in Google Maps</a> if it does not display here.</p>
+      </section>
 
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">Location:</span>
-          124 Riverside Road, Johannesburg, Gauteng, South Africa
-        </li>
-        <li>
-          <span class="contact-label">Email:</span>
-          <a href="mailto:info@MATCHLY-demo.co.za">info@MATCHLY.co.za</a>
-        </li>
-        <li>
-          <span class="contact-label">Phone:</span>
-          <a href="tel:+27110000000">011 000 0000</a>
-        </li>
-      </ul>
-
-      <h3>Follow Our Updates</h3>
-      <p>Stay up to date with league fixtures, results and standing updates on our social media.</p>
-      <ul class="social-links">
-        <li><a href="#" aria-label="MATCHLY on Facebook">Facebook</a></li>
-        <li><a href="#" aria-label="MATCHLY on Instagram">Instagram</a></li>
-        <li><a href="#" aria-label="MATCHLY on X (Twitter)">X (Twitter)</a></li>
-      </ul>
-
-      <p><a class=" btn-primary" href="enquiry.html">Prefer to send a message instead? Use our Enquiry Form.</a></p>
+      <section class="contact-form-section" aria-labelledby="contact-form-heading">
+        <h3 id="contact-form-heading">Prepare a contact email</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Full name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error">
+            <span class="field-error" id="contact-name-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email address</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error">
+            <span class="field-error" id="contact-email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" required aria-describedby="contact-subject-error">
+            <span class="field-error" id="contact-subject-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" required aria-describedby="contact-message-error"></textarea>
+            <span class="field-error" id="contact-message-error" aria-live="polite"></span>
+          </div>
+          <button class="btn btn-primary" type="submit">Open email draft</button>
+          <p id="contact-form-status" class="form-success" aria-live="polite" hidden></p>
+          <p id="contact-mailto-container" hidden><a id="contact-mailto-link" class="btn btn-secondary" href="#">Open the prepared email</a></p>
+        </form>
+      </section>
     </section>
 
   </main>
@@ -106,13 +121,13 @@
     <div class="footer-social">
       <h3>Follow Matchly</h3>
       <ul class="social-links">
-        <li><a href="#" aria-label="Matchly on Facebook">Facebook</a></li>
-        <li><a href="#" aria-label="Matchly on Instagram">Instagram</a></li>
-        <li><a href="#" aria-label="Matchly on X (Twitter)">X (Twitter)</a></li>
+        <li><span>Facebook</span></li>
+        <li><span>Instagram</span></li>
+        <li><span>X (Twitter)</span></li>
       </ul>
     </div>
 
-    <p class="copyright">&copy; 2026 Matchly Sports Community. Student project &mdash; fictional organisation, not real.</p>
+    <p class="copyright">&copy; 2026 Matchly Sports Community.</p>
   </footer>
 </body>
 </html>

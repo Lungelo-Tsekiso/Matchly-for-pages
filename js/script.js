@@ -63,13 +63,32 @@ document.addEventListener('DOMContentLoaded', function () {
       tab.addEventListener('click', function () {
           activateTab(tab, tabs);
         });
- 
-        tab.setAttribute('aria-selected', 'true');
-        const activePanel = document.getElementById(tab.getAttribute('aria-controls'));
-        if (activePanel) activePanel.hidden = false;
+      });
+
+      tabList.addEventListener('keydown', function (event) {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        const currentIndex = Array.from(tabs).indexOf(document.activeElement);
+        if (currentIndex === -1) return;
+        event.preventDefault();
+        let nextIndex = currentIndex;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex + tabs.length - 1) % tabs.length;
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+        tabs[nextIndex].focus();
+        activateTab(tabs[nextIndex], tabs);
       });
     });
-  });
+
+    function activateTab(activeTab, tabs) {
+      tabs.forEach(function (tab) {
+        const selected = tab === activeTab;
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        tab.tabIndex = selected ? 0 : -1;
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !selected;
+      });
+    }
 
 
   /* 4. TEAM SEARCH + SPORT FILTER (Teams page) */
@@ -121,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterSport = document.getElementById('filter-sport');
   const filterCompetition = document.getElementById('filter-competition');
   const filterTeam = document.getElementById('filter-team');
+  const fixtureSearch = document.getElementById('fixture-search');
+  const fixturesFilterForm = document.getElementById('fixtures-filter-form');
   const fixturesTable = document.getElementById('fixtures-table');
   const noFixturesMessage = document.getElementById('no-fixtures-message');
 
@@ -129,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sportValue = filterSport ? filterSport.value : 'all';
     const competitionValue = filterCompetition ? filterCompetition.value : 'all';
     const teamValue = filterTeam ? filterTeam.value : 'all';
+    const query = fixtureSearch ? fixtureSearch.value.trim().toLowerCase() : '';
     const rows = fixturesTable.querySelectorAll('tbody tr');
     let anyVisible = false;
 
@@ -140,7 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const sportMatches = sportValue === 'all' || rowSport === sportValue;
       const competitionMatches = competitionValue === 'all' || rowCompetition === competitionValue;
       const teamMatches = teamValue === 'all' || rowTeams.indexOf(teamValue) !== -1;
-      const show = sportMatches && competitionMatches && teamMatches;
+      const textMatches = !query || row.textContent.toLowerCase().includes(query);
+      const show = sportMatches && competitionMatches && teamMatches && textMatches;
 
       row.hidden = !show;
       if (show) anyVisible = true;
@@ -154,13 +177,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (filterSport) filterSport.addEventListener('change', filterFixtures);
   if (filterCompetition) filterCompetition.addEventListener('change', filterFixtures);
   if (filterTeam) filterTeam.addEventListener('change', filterFixtures);
+  if (fixtureSearch) fixtureSearch.addEventListener('input', filterFixtures);
+  if (fixturesFilterForm) {
+    fixturesFilterForm.addEventListener('reset', function () {
+      window.setTimeout(filterFixtures, 0);
+    });
+  }
+  filterFixtures();
 
 
   /* 6. ENQUIRY FORM VALIDATION */
   const enquiryForm = document.getElementById('enquiry-form');
 
   if (enquiryForm) {
-    const successMessage = document.getElementById('enquiry-success-message');
+    const summary = document.getElementById('enquiry-summary');
+    const summaryContent = document.getElementById('enquiry-summary-content');
 
     const fields = [
       {
@@ -173,6 +204,11 @@ document.addEventListener('DOMContentLoaded', function () {
         error: document.getElementById('enquiry-email-error'),
         message: 'Please enter a valid email address.',
         isEmail: true
+      },
+      {
+        input: document.getElementById('enquiry-category'),
+        error: document.getElementById('enquiry-category-error'),
+        message: 'Please choose an enquiry category.'
       },
       {
         input: document.getElementById('enquiry-subject'),
@@ -191,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validateField(field) {
-      if (!field.input) return true; // field not on this page, skip
+      if (!field.input) return true;
       const value = field.input.value.trim();
       let valid = value.length > 0;
       if (valid && field.isEmail) {
@@ -213,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     enquiryForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // this is a student demo - nothing is actually sent
+      e.preventDefault();
 
       let allValid = true;
       fields.forEach(function (field) {
@@ -223,14 +259,81 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       if (allValid) {
-        if (successMessage) successMessage.hidden = false;
-        enquiryForm.reset();
-      } else if (successMessage) {
-        successMessage.hidden = true;
+        if (summary && summaryContent) {
+          const name = document.getElementById('enquiry-name').value.trim();
+          const email = document.getElementById('enquiry-email').value.trim();
+          const category = document.getElementById('enquiry-category').value;
+          const subject = document.getElementById('enquiry-subject').value.trim();
+          const message = document.getElementById('enquiry-message').value.trim();
+          summaryContent.textContent = name + ' (' + email + '), your ' + category.toLowerCase() +
+            ' enquiry "' + subject + '" is ready for review. Message: ' + message;
+          summary.hidden = false;
+          summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else if (summary) {
+        summary.hidden = true;
+        const firstInvalid = fields.find(function (field) {
+          return field.input && !validateField(field);
+        });
+        if (firstInvalid) firstInvalid.input.focus();
       }
     });
   }
 
+  /* CONTACT FORM: validate, create a mailto draft, and open the email handler */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const contactFields = [
+      ['contact-name', 'contact-name-error', 'Please enter your name.'],
+      ['contact-email', 'contact-email-error', 'Please enter a valid email address.', true],
+      ['contact-subject', 'contact-subject-error', 'Please enter a subject.'],
+      ['contact-message', 'contact-message-error', 'Please enter a message.']
+    ];
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    contactFields.forEach(function (field) {
+      const input = document.getElementById(field[0]);
+      const error = document.getElementById(field[1]);
+      input.addEventListener('blur', function () {
+        const value = input.value.trim();
+        const valid = value.length > 0 && (!field[3] || emailPattern.test(value));
+        error.textContent = valid ? '' : field[2];
+      });
+    });
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      let firstInvalid = null;
+      contactFields.forEach(function (field) {
+        const input = document.getElementById(field[0]);
+        const error = document.getElementById(field[1]);
+        const value = input.value.trim();
+        const valid = value.length > 0 && (!field[3] || emailPattern.test(value));
+        error.textContent = valid ? '' : field[2];
+        if (!valid && !firstInvalid) firstInvalid = input;
+      });
+      const status = document.getElementById('contact-form-status');
+      const linkContainer = document.getElementById('contact-mailto-container');
+      if (firstInvalid) {
+        status.hidden = true;
+        linkContainer.hidden = true;
+        firstInvalid.focus();
+        return;
+      }
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const subject = document.getElementById('contact-subject').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const body = 'From: ' + name + ' (' + email + ')\n\n' + message;
+      const mailto = 'mailto:contact@matchly.example?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      document.getElementById('contact-mailto-link').href = mailto;
+      status.textContent = 'Your email draft is ready. It has not been sent. The recipient address is a placeholder; replace it with a real address before use.';
+      status.hidden = false;
+      linkContainer.hidden = false;
+      window.location.href = mailto;
+    });
+  }
 
   /* 7. LIVE SCORES DEMONSTRATION */
   const liveGameCards = document.querySelectorAll('.live-game-card');
@@ -282,6 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*   MATCHLY SPORT BALLS BOUNCE ANIMATION SCRIPT */
 document.addEventListener("DOMContentLoaded", () => {
   // Create canvas element dynamically
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const canvas = document.createElement("canvas");
   canvas.id = "sport-balls-canvas";
   document.body.appendChild(canvas);
@@ -390,6 +494,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const elementsToReveal = document.querySelectorAll('.card-grid > *, .competition-card, .team-card, .match-card, .hero-text');
   elementsToReveal.forEach(el => el.classList.add('reveal-on-scroll'));
 
+  if (!('IntersectionObserver' in window)) {
+    elementsToReveal.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -417,13 +525,60 @@ document.addEventListener("DOMContentLoaded", () => {
         gallerySections.forEach(section => {
           const category = section.getAttribute("data-category");
           
-          if (filterValue === "all" || category === filterValue) {
-            section.style.display = "block";
-          } else {
-            section.style.display = "none";
-          }
+          section.hidden = filterValue !== "all" && category !== filterValue;
         });
       });
     });
   }
+
+  const lightbox = document.getElementById('gallery-lightbox');
+  const photoButtons = Array.from(document.querySelectorAll('.gallery-image-button'));
+  if (!lightbox || !photoButtons.length || typeof lightbox.showModal !== 'function') return;
+
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxPosition = document.getElementById('lightbox-position');
+  let activePhotoIndex = 0;
+
+  function showPhoto(index) {
+    activePhotoIndex = (index + photoButtons.length) % photoButtons.length;
+    const button = photoButtons[activePhotoIndex];
+    const thumbnail = button.querySelector('img');
+    lightboxImage.src = thumbnail.currentSrc || thumbnail.src;
+    lightboxImage.alt = thumbnail.alt;
+    lightboxCaption.textContent = button.closest('figure').querySelector('figcaption').textContent;
+    lightboxPosition.textContent = 'Image ' + (activePhotoIndex + 1) + ' of ' + photoButtons.length;
+  }
+
+  photoButtons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      showPhoto(index);
+      lightbox.showModal();
+      document.getElementById('lightbox-close').focus();
+    });
+  });
+  document.getElementById('lightbox-close').addEventListener('click', function () {
+    lightbox.close();
+  });
+  document.getElementById('lightbox-previous').addEventListener('click', function () {
+    showPhoto(activePhotoIndex - 1);
+  });
+  document.getElementById('lightbox-next').addEventListener('click', function () {
+    showPhoto(activePhotoIndex + 1);
+  });
+  lightbox.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showPhoto(activePhotoIndex - 1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showPhoto(activePhotoIndex + 1);
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      lightbox.close();
+    }
+  });
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) lightbox.close();
+  });
 });

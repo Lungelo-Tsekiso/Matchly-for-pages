@@ -64,8 +64,21 @@
 
         <div class="form-field">
           <label for="enquiry-email">Email Address</label>
-          <input type="email" id="enquiry-email" name="enquiry-email" required autocomplete="email" />
+          <input type="email" id="enquiry-email" name="enquiry-email" required autocomplete="email" aria-describedby="enquiry-email-error" />
           <span class="field-error" id="enquiry-email-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="enquiry-category">Enquiry category</label>
+          <select id="enquiry-category" name="enquiry-category" required aria-describedby="enquiry-category-error">
+            <option value="">Choose a category</option>
+            <option value="Joining a team">Joining a team</option>
+            <option value="Registering a team">Registering a team</option>
+            <option value="Competition information">Competition information</option>
+            <option value="Fixtures or venues">Fixtures or venues</option>
+            <option value="Other sports question">Other sports question</option>
+          </select>
+          <span class="field-error" id="enquiry-category-error" aria-live="polite"></span>
         </div>
 
         <div class="form-field">
@@ -81,7 +94,11 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">Submit Enquiry</button>
-        <p id="enquiry-success-message" class="form-success" aria-live="polite" hidden>Thank you! Your enquiry has been received </p>
+        <section id="enquiry-summary" class="form-success form-summary" aria-live="polite" aria-labelledby="enquiry-summary-heading" hidden>
+          <h3 id="enquiry-summary-heading">Your enquiry summary</h3>
+          <p id="enquiry-summary-content"></p>
+          <p>This summary was generated in your browser only. It has not been sent or stored.</p>
+        </section>
       </form>
     </section>
 
@@ -116,4 +133,3 @@
 
 
 </body>
-

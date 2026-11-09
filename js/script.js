@@ -54,13 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
  
   tabLists.forEach(function (tabList) {
     const tabs = tabList.querySelectorAll('[role="tab"]');
- 
+    const initiallySelected = Array.from(tabs).find(function (tab) {
+      return tab.getAttribute('aria-selected') === 'true';
+    }) || tabs[0];
+    if (initiallySelected) activateTab(initiallySelected, tabs);
+
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        tabs.forEach(function (otherTab) {
-          otherTab.setAttribute('aria-selected', 'false');
-          const otherPanel = document.getElementById(otherTab.getAttribute('aria-controls'));
-          if (otherPanel) otherPanel.hidden = true;
+          activateTab(tab, tabs);
         });
  
         tab.setAttribute('aria-selected', 'true');

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
 </head>
+
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -66,73 +67,82 @@
 
 
 
-<!--Image Gallery-->
-     
-     <div style="display: flex; gap: 30px; justify-content: start; flex-wrap: wrap;">
+    <div class="gallery-collections">
+      <section class="gallery-category-section" data-category="basketball" aria-labelledby="gallery-basketball">
+        <h2 id="gallery-basketball">Basketball</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge basketball player shooting outdoors"><img src="../Images/optimized/basketball.pic1.jpg" alt="Basketball player shooting toward an outdoor hoop" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Taking a shot during an outdoor basketball game.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge community basketball match"><img src="../Images/optimized/basketball.pic2.jpg" alt="Basketball game underway on a community court" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Community basketball action on court.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge overhead basketball court"><img src="../Images/optimized/basketball.pic3.jpg" alt="Overhead view of a blue indoor basketball court" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>A court view between plays.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge basketball players competing"><img src="../Images/optimized/basketball.pic4.jpg" alt="Two basketball players contesting possession under bright arena lights" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Players contest possession under the basket.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge basketball rebound"><img src="../Images/optimized/basketball.pic5.jpg" alt="Basketball players reaching for a rebound during a game" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Reaching for the rebound.</figcaption></figure>
+        </div>
+      </section>
 
-  <section class="gallery-category-section" data-category="basketball" style="border-right: 3px solid #2B2B2B; padding-right: 30px;">
-    <h2>Basketball Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/basketball.pic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/basketball.pic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/basketball.pic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/basketball.pic4.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/basketball.pic5.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>Basketball</figcaption></figure>
+      <section class="gallery-category-section" data-category="soccer" aria-labelledby="gallery-soccer">
+        <h2 id="gallery-soccer">Soccer</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge soccer team at a stadium"><img src="../Images/optimized/soccer.pic1.jpg" alt="Soccer players preparing on a stadium pitch" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Players gather on the pitch before play.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge soccer players in action"><img src="../Images/optimized/soccer.pic2.jpg" alt="Soccer players chasing the ball across a grass field" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Chasing the ball across the field.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge soccer goalkeeper save"><img src="../Images/optimized/soccer.pic3.jpg" alt="Goalkeeper diving to save a shot near the goal" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>A goalkeeper dives to make a save.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge soccer training"><img src="../Images/optimized/soccer.pic4.jpg" alt="Soccer balls set out on a green training field" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Training balls ready on the grass.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gallery-category-section" data-category="netball" aria-labelledby="gallery-netball">
+        <h2 id="gallery-netball">Netball</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge netball players contesting a shot"><img src="../Images/optimized/netballpic1.jpg" alt="Two netball players contesting the ball near the goal post" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Two players contest the ball near the post.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge netball player during a match"><img src="../Images/optimized/netballpic2.jpg" alt="Netball player focused during an indoor match" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Focus during a match.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge netball pass"><img src="../Images/netballpic3.jpg" alt="Netball player holding the ball while teammates move into position" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Finding a teammate for the next pass.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge netball game on outdoor court"><img src="../Images/netballpic4.jpg" alt="Netball players passing on a blue outdoor court" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Passing play on an outdoor court.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gallery-category-section" data-category="volleyball" aria-labelledby="gallery-volleyball">
+        <h2 id="gallery-volleyball">Volleyball</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge volleyball team player"><img src="../Images/optimized/volleyball.pic1.jpg" alt="Volleyball player standing courtside during a game" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Ready for the next point.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge volleyball player setting the ball"><img src="../Images/optimized/volleyball.pic2.jpg" alt="Volleyball player raising the ball to set up a play" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Setting up a play at the net.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge volleyball team huddle"><img src="../Images/optimized/volleyball.pic3.jpg" alt="Volleyball team huddled together between points" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Team huddle between points.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge volleyball serve"><img src="../Images/optimized/volleyball.pic4.jpg" alt="Volleyball player preparing to serve indoors" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Preparing to serve indoors.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gallery-category-section" data-category="rugby" aria-labelledby="gallery-rugby">
+        <h2 id="gallery-rugby">Rugby</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge rugby tackle"><img src="../Images/optimized/rugbypic1.jpg" alt="Rugby players tackling a ball carrier on the field" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Defenders close in on the ball carrier.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge rugby line-out"><img src="../Images/optimized/rugbypic2.jpg" alt="Rugby player lifted to catch a ball at a line-out" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>A contested catch at the line-out.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge rugby ball on the pitch"><img src="../Images/optimized/rugbypic3.jpg" alt="Rugby ball resting on the marked grass pitch" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>The ball on the marked rugby field.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge women's rugby match"><img src="../Images/rugbypic4.jpg" alt="Women playing rugby under evening lights" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Evening rugby under the lights.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gallery-category-section" data-category="athletics" aria-labelledby="gallery-athletics">
+        <h2 id="gallery-athletics">Athletics</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge road race"><img src="../Images/optimized/athlecticspic1.jpg" alt="Runners competing in a road race with spectators nearby" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Runners approach the finish area.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge track relay runner"><img src="../Images/optimized/athlecticspic2.jpg" alt="Track athlete sprinting with a relay baton" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>A sprinter carries the baton around the track.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge running track lanes"><img src="../Images/optimized/athlecticspic3.jpg" alt="Numbered lanes on a red athletics running track" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Lane markings on the running track.</figcaption></figure>
+          <figure class="gallery-item"><button class="gallery-image-button" type="button" aria-label="Enlarge athletics runner"><img src="../Images/optimized/athlecticspic4.jpg" alt="Athlete running on an outdoor track" width="150" height="150" loading="lazy" decoding="async"></button><figcaption>Stride through an outdoor race.</figcaption></figure>
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <section class="gallery-category-section" data-category="netball" style="border-right: 3px solid #2B2B2B; padding-right: 30px;">
-    <h2>Netball Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/netballpic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/netballpic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/netballpic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/netballpic4.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>Netball</figcaption></figure>
+  <dialog id="gallery-lightbox" class="gallery-lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-toolbar">
+      <button id="lightbox-close" class="btn btn-secondary" type="button">Close <span class="sr-only">image viewer</span></button>
     </div>
-  </section>
-
-  <section class="gallery-category-section" data-category="soccer">
-    <h2>Soccer Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/soccer.pic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/soccer.pic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/soccer.pic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/soccer.pic4.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>Soccer</figcaption></figure>
-    </div>
-  </section>
-
-  <section class="gallery-category-section" data-category="volleyball">
-    <h2>volleyball Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/volleyball.pic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/volleyball.pic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/volleyball.pic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/volleyball.pic4.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>Volleyball </figcaption></figure>
-    </div>
-  </section>
-
-  <section class="gallery-category-section" data-category="rugby">
-    <h2>Rugby Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/rugbypic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/rugbypic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/rugbypic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/rugbypic4.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>Rugby</figcaption></figure>
-    </div>
-  </section>
-
-  <section class="gallery-category-section" data-category="athletics">
-    <h2>Athletics Photos</h2>
-    <div style="display: grid; grid-template-columns: 150px 150px; gap: 5px;">
-      <figure style="margin:0;"><img src="../Images/athlecticspic1.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/athlecticspic2.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/athlecticspic3.jpg" width="150" height="150" style="object-fit:cover;"></figure>
-      <figure style="margin:0;"><img src="../Images/athlecticspic4.jpg" width="150" height="150" style="object-fit:cover;"><figcaption>athletics</figcaption></figure>
-    </div>
-  </section>
-
-</div>
-</main>
+    <button id="lightbox-previous" class="lightbox-control lightbox-previous" type="button" aria-label="Previous image">&#10094;</button>
+    <figure>
+      <img id="lightbox-image" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button id="lightbox-next" class="lightbox-control lightbox-next" type="button" aria-label="Next image">&#10095;</button>
+    <p id="lightbox-position" class="lightbox-position" aria-live="polite"></p>
+  </dialog>
 
 
     <footer class="site-footer">

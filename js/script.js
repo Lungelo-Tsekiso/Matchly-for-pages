@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 16 cute bouncing balls
   const ballsArray = [];
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 8; i++) {
     ballsArray.push(new BouncyBall());
   }
 
